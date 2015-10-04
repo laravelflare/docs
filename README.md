@@ -1,1 +1,1 @@
-# docs
+# Flare Documentation
