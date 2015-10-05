@@ -16,9 +16,9 @@ If you would prefer to install Flare on a new Laravel (5.1 LTS) Project:
     flare install clean
 ```
 
-If you have decided to run a clean install, you will need to run the Laravel Migrations:
+If you have decided to run a clean install, you will need to run the Laravel Migrations which will create the user table:
 ```
-    php artisan migrate`
+    php artisan migrate
 ```
 
 ## Include the Flare Service Provider and Resources
@@ -29,65 +29,13 @@ Publish assets and config with:
     php artisan vendor:publish
 ```
 
-## Creating your first Admin Section
+## Create your first account
+To login to the Flare Admin you will need a user account. Currently the only Auth provider is the built in Auth which uses, by default, the User model. To create your first user you can use the `make:user` artisan command:
 ```
-    php artisan make:modeladmin UserAdmin
-```
-
-```
-    php artisan make:managedmodel ManagedUser
+    php artisan make:user
 ```
 
-In UserAdmin:
-```
-    protected $managedModels = [
-        \App\Admin\Models\ManagedUser::class
-    ];
-```
+You will be prompted for a name, an email address and a password - an account will then be created for you.
 
-In config/flare.php
-```
-    'modeladmins' => [
-        \App\Admin\Models\UserAdmin::class,
-    ],
-```
-
-Define field mapping in ManagedUser:
-```
-    protected $mapping = [
-        'name' => ['type' => 'text', 'length' => 32, 'required' => 'required'],
-        'email' => ['type' => 'email', 'length' => 255, 'required' => 'required'],
-        'password' => ['type' => 'password', 'length' => 32, 'required' => 'required'],
-    ];
-```
-
-You can now add your first entry to the database using Flare.
-
-However, the output table isn't very helpful at all ... Let's fix that:
-```
-    protected $summary_fields = [
-        'id' => 'ID',
-        'name',
-        'email',
-        'created_at' => 'Created',
-        'updated_at' => 'Updated',
-    ];
-```
-
-Now when we view our output table, we can see our first user! Let's view that user...
-
-So the password was saved as rawtext which isn't helpful at all. Flare allows you to define mutators specific to Managed Model instances (such as your ManagedUser), so the following:
-
-```
-    protected function setPasswordAttribute($value)
-    {
-        $this->model->setAttribute('password', bcrypt($value));
-    }
-```
-
-Will bcrypt the provided password when the ManagedUser instance performs a save on the Model.
-
-Let's go to Edit our user now and update their password - it will now be hashed, which can be verified by viewing the user again.
-
-
+**One complete, you are ready to login to the Flare Admin at /admin!**
 
