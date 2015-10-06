@@ -4,6 +4,10 @@
 
 
 
+- [Upgrading](15-UPGRADING.md)
+
+
+
 - [Authentication](20-AUTHENTICATION.md)
 
 
