@@ -1,5 +1,8 @@
 # Upgrading
 
+## Upgrading to 0.1.5
+- Re-publish Flare assets with `php artisan vendor:publish`
+
 ## Upgrading to 0.1.4
 - Re-publish Flare assets with `php artisan vendor:publish`
 
