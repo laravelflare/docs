@@ -1,5 +1,8 @@
 # Upgrading
 
+## Upgrading to 0.1.4
+- Re-publish Flare assets with `php artisan vendor:publish`
+
 ## Upgrading to 0.1.1
 - Backup the `public/vendor/flare` folder before deleting it.
 
