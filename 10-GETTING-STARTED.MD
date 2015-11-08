@@ -22,7 +22,7 @@ If you have decided to run a clean install, you will need to run the Laravel Mig
 ```
 
 ## Include the Flare Service Provider and Resources
-Add `LaravelFlare\Flare\FlareServiceProvider::class` to your Application Services Providers list (in config/app.php)
+Ensure that `LaravelFlare\Flare\FlareServiceProvider::class` has been added to your Application Service Providers list (in config/app.php) automatically and if it has not add it after the RouteServiceProvider.
 
 Publish assets and config with:
 ```
