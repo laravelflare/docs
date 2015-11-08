@@ -1,5 +1,18 @@
 # Upgrading
 
+## Upgrading to 0.2.x
+A large amount of functionality has been restructured and refactored in this release. Please backup all configuration and custom views before proceeding, as well as all `ManagedModel` classes (which have now been removed in favour of a simpler structure).
+
+- Republish all assets and config:
+`php artisan vendor:publish`
+
+- Remove existing `ModelAdmin` and `ManagedModel` classes.
+
+- Create new `ModelAdmin` classes for all Models you wish to administer. 
+
+T.B.C
+
+
 ## Upgrading to 0.1.15 from >0.1.1
 - Remove Flare assets and config in the following locations:
 
