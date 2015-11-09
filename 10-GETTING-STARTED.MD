@@ -15,7 +15,7 @@ Now to install Flare in your current directory (on an existing Laravel Project):
 
 If you would prefer to install Flare on a new Laravel (5.1 LTS) Project:
 
-``` 
+```
     flare install clean
 ```
 

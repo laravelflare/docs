@@ -30,7 +30,6 @@ You can create your own classes which extend `ModelAdminEvent` which can be as
 simple as:
 
 ```php
-
 <?php
 
 namespace App\Events;
