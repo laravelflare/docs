@@ -1,0 +1,1 @@
+# Flare Install Documentation
